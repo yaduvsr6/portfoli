@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume — Yadukrishna V | Cybersecurity &amp; Ethical Hacking</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --bg-page: #090d16;
+      --sheet-bg: #0f172a;
+      --sheet-border: rgba(59, 130, 246, 0.25);
+      --primary: #f8fafc;
+      --secondary: #94a3b8;
+      --accent: #38bdf8;
+      --accent-primary: #3b82f6;
+      --border-dark: rgba(255, 255, 255, 0.08);
+      --text-muted: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--primary);
+      line-height: 1.5;
+      padding: 30px 15px;
+    }
+
+    /* Top Action Bar */
+    .action-bar {
+      max-width: 860px;
+      margin: 0 auto 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+      text-transform: uppercase;
+    }
+
+    .btn-primary {
+      background: var(--accent-primary);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: #2563eb;
+      color: #ffffff;
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--primary);
+      border: 1px solid var(--border-dark);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(59, 130, 246, 0.12);
+      border-color: var(--accent-primary);
+      color: #ffffff;
+    }
+
+    /* Resume Document Sheet */
+    .resume-sheet {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--sheet-bg);
+      border: 1px solid var(--sheet-border);
+      padding: 44px 50px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 30px rgba(59, 130, 246, 0.1);
+      border-radius: 12px;
+    }
+
+    /* Header */
+    .resume-header {
+      border-bottom: 2px solid var(--accent-primary);
+      padding-bottom: 18px;
+      margin-bottom: 22px;
+    }
+
+    .resume-header-flex {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .resume-photo {
+      width: 95px;
+      height: 115px;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 8px;
+      border: 2px solid var(--accent-primary);
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.25);
+      flex-shrink: 0;
+    }
+
+    .resume-header-info {
+      flex: 1;
+    }
+
+    .resume-name {
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .resume-tagline {
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 10px;
+    }
+
+    .resume-contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.84rem;
+      color: var(--secondary);
+    }
+
+    .resume-contact-row a {
+      color: var(--secondary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .resume-contact-row a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    /* Sections */
+    .resume-section {
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent);
+      border-bottom: 1px solid var(--border-dark);
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .summary-text {
+      font-size: 0.9rem;
+      color: var(--secondary);
+      line-height: 1.65;
+      text-align: justify;
+    }
+
+    /* Item Block */
+    .item-block {
+      margin-bottom: 12px;
+    }
+
+    .item-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 2px;
+    }
+
+    .item-title {
+      font-size: 0.94rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .item-subtitle {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--secondary);
+    }
+
+    .item-date {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .item-tech-line {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+    }
+
+    .item-tech-line strong {
+      color: var(--secondary);
+    }
+
+    .bullet-list {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    .bullet-list li {
+      font-size: 0.88rem;
+      color: var(--secondary);
+      margin-bottom: 4px;
+      line-height: 1.5;
+    }
+
+    /* Skills Table */
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    .skills-table tr {
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .skills-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .skills-table td {
+      padding: 5px 0;
+      vertical-align: top;
+    }
+
+    .skills-table td.skill-label {
+      width: 28%;
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+      color: #ffffff;
+      font-size: 0.84rem;
+    }
+
+    .skills-table td.skill-values {
+      width: 72%;
+      color: var(--secondary);
+    }
+
+    /* Print Styles: Crisp Pure White for PDF/Printer */
+    @media print {
+      body {
+        background: white !important;
+        color: #111 !important;
+        padding: 0;
+      }
+
+      .action-bar {
+        display: none !important;
+      }
+
+      .resume-sheet {
+        background: white !important;
+        color: #111 !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+
+      .resume-name {
+        color: #000 !important;
+      }
+
+      .resume-tagline {
+        color: #2563eb !important;
+      }
+
+      .resume-header {
+        border-bottom-color: #000 !important;
+      }
+
+      .resume-photo {
+        border-color: #000 !important;
+        box-shadow: none !important;
+      }
+
+      .section-title {
+        border-bottom-color: #333 !important;
+        color: #000 !important;
+      }
+
+      .item-title {
+        color: #000 !important;
+      }
+
+      .item-date {
+        color: #2563eb !important;
+      }
+
+      .summary-text, .item-subtitle, .bullet-list li, .skills-table td {
+        color: #222 !important;
+      }
+
+      a {
+        text-decoration: none !important;
+        color: inherit !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Bar -->
+  <div class="action-bar">
+    <a href="index.html" class="btn btn-secondary">
+      <i class="fas fa-arrow-left"></i> Back to Portfolio
+    </a>
+    <div style="display: flex; gap: 10px;">
+      <button onclick="window.print()" class="btn btn-primary">
+        <i class="fas fa-print"></i> Print / Save as PDF
+      </button>
+      <a href="mailto:yadukrishnasr4@gmail.com" class="btn btn-secondary">
+        <i class="fas fa-envelope"></i> Email Yadukrishna
+      </a>
+    </div>
+  </div>
+
+  <!-- Printable Resume Document -->
+  <main class="resume-sheet">
+
+    <!-- Header with Photo -->
+    <header class="resume-header">
+      <div class="resume-header-flex">
+        <img src="assets/yadukrishna.jpg" alt="Yadukrishna V" class="resume-photo">
+        <div class="resume-header-info">
+          <h1 class="resume-name">YADUKRISHNA V</h1>
+          <div class="resume-tagline">
+            B.Tech CSE Student &nbsp;|&nbsp; Cybersecurity &nbsp;|&nbsp; Ethical Hacking Learner
+          </div>
+          <div class="resume-contact-row">
+            <span><i class="fas fa-map-marker-alt"></i> Kozhikode, Kerala, India</span>
+            <span>&bull;</span>
+            <a href="mailto:yadukrishnasr4@gmail.com"><i class="fas fa-envelope"></i> yadukrishnasr4@gmail.com</a>
+            <span>&bull;</span>
+            <a href="https://www.linkedin.com/in/yadukrishna-v-855942273" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> linkedin.com/in/yadukrishna-v</a>
+            <span>&bull;</span>
+            <a href="https://github.com/Yadukrishnasr4" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> github.com/Yadukrishnasr4</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="resume-section">
+      <h2 class="section-title"><i class="fas fa-user-secret"></i> Professional Summary</h2>
+      <p class="summary-text">
+        I am a final-year B.Tech Computer Science and Engineering student passionate about cybersecurity, network security, 
+        and ethical hacking. I am developing practical skills in Linux, Python, networking, and web application security. 
+        I enjoy understanding vulnerabilities, practicing in authorized security labs, and developing projects that help 
+        improve digital security. My goal is to begin my career in cybersecurity and contribute to building safer digital systems.
+      </p>
+    </section>
+
+    <!-- Education -->
+    <section class="resume-section">
+      <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education &amp; Training</h2>
+      <div class="item-block">
+        <div class="item-header">
+          <span class="item-title">B.Tech, Computer Science and Engineering</span>
+          <span class="item-date">Expected 2027</span>
+        </div>
+        <div class="item-subtitle">Mahaguru Institute of Technology | Kerala Technological University (KTU)</div>
+      </div>
+
+      <div class="item-block" style="margin-top: 8px;">
+        <div class="item-header">
+          <span class="item-title">Advanced Diploma in Cybersecurity and Ethical Hacking (ADCD)</span>
+          <span class="item-date">In progress</span>
+        </div>
+        <div class="item-subtitle">Red Team Hackers Academy &bull; Student</div>
+      </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="resume-section">
+      <h2 class="section-title"><i class="fas fa-shield-alt"></i> Technical Skills</h2>
+      <table class="skills-table">
+        <tr>
+          <td class="skill-label">Cybersecurity:</td>
+          <td class="skill-values">Ethical Hacking Fundamentals, Vulnerability Assessment, Web Security Testing (OWASP Top 10), Digital Forensics</td>
+        </tr>
+        <tr>
+          <td class="skill-label">Security Tools:</td>
+          <td class="skill-values">Kali Linux, Nmap, Wireshark, Burp Suite (Community)</td>
+        </tr>
+        <tr>
+          <td class="skill-label">Programming:</td>
+          <td class="skill-values">Python, Java, C, C++, JavaScript, PHP, SQL, HTML5, CSS3</td>
+        </tr>
+        <tr>
+          <td class="skill-label">Operating Systems:</td>
+          <td class="skill-values">Linux (Ubuntu/Debian), Kali Linux, Windows</td>
+        </tr>
+        <tr>
+          <td class="skill-label">Development Tools:</td>
+          <td class="skill-values">Git, GitHub, Visual Studio Code</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Internship Experience -->
+    <section class="resume-section">
+      <h2 class="section-title"><i class="fas fa-briefcase"></i> Internship Experience</h2>
+      <div class="item-block">
+        <div class="item-header">
+          <span class="item-title">Python Intern</span>
+          <span class="item-date">May 2024 – June 2024</span>
+        </div>
+        <div class="item-subtitle" style="margin-bottom: 4px;">Zoople Technologies</div>
+        <ul class="bullet-list">
+          <li>Built foundational knowledge of Python programming and object-oriented modular design.</li>
+          <li>Practised core Python concepts, programming logic, debugging, and algorithmic problem-solving.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="resume-section">
+      <h2 class="section-title"><i class="fas fa-terminal"></i> Technical Projects &amp; Research</h2>
+
+      <!-- Web Project 1: College Techfest Website -->
+      <div class="item-block">
+        <div class="item-header">
+          <span class="item-title">College Technical Fest Website &amp; Event Management Portal</span>
+        </div>
+        <div class="item-tech-line"><strong>Technologies:</strong> HTML5, CSS3, JavaScript, PHP, SQL, Responsive Web Design</div>
+        <ul class="bullet-list">
+          <li>Architected and developed a full-stack campus techfest website for event schedules, announcements, and team registrations.</li>
+          <li>Engineered backend PHP and SQL database logic to store registrant entries, validate form inputs, and manage event schedules.</li>
+        </ul>
+      </div>
+
+      <!-- Web Project 2: Modern Portfolio Site -->
+      <div class="item-block" style="margin-top: 10px;">
+        <div class="item-header">
+          <span class="item-title">Modern Cybersecurity &amp; Software Developer Portfolio Website</span>
+        </div>
+        <div class="item-tech-line"><strong>Technologies:</strong> HTML5, CSS3, Vanilla JavaScript, Glassmorphism, ATS Integration</div>
+        <ul class="bullet-list">
+          <li>Designed a cross-device responsive developer showcase website with ambient particle effects, glassmorphic UI, and cyber VFX.</li>
+          <li>Implemented interactive 3D perspective animations, dynamic typing effect, and print-ready ATS resume generator.</li>
+        </ul>
+      </div>
+
+      <!-- Security Project 1 -->
+      <div class="item-block" style="margin-top: 10px;">
+        <div class="item-header">
+          <span class="item-title">Healthcare IoT Intrusion Detection System using Spatial-Temporal Graph Neural Networks and Autoencoder Pretraining</span>
+        </div>
+        <div class="item-tech-line"><strong>Technologies:</strong> Python, PyTorch, Graph Neural Networks, Healthcare IoT, Cybersecurity</div>
+        <ul class="bullet-list">
+          <li>Developing a healthcare IoT intrusion-detection framework using graph-based and temporal learning approaches.</li>
+          <li>Exploring graph learning to model relationships between connected IoT medical devices and network traffic flows.</li>
+          <li>Investigating Masked Graph Autoencoders and multi-scale temporal convolutions to identify changing attack patterns.</li>
+        </ul>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="item-block" style="margin-top: 10px;">
+        <div class="item-header">
+          <span class="item-title">Web Application Security Testing in OWASP Juice Shop</span>
+        </div>
+        <div class="item-tech-line"><strong>Technologies:</strong> Burp Suite, OWASP Juice Shop, Web Security, Vulnerability Assessment</div>
+        <ul class="bullet-list">
+          <li>Practiced identifying SQL Injection, Broken Authentication, and Cross-Site Scripting (XSS) in an authorized lab.</li>
+          <li>Utilized Burp Suite to inspect and manipulate HTTP traffic, documenting root causes and mitigation strategies.</li>
+        </ul>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="item-block" style="margin-top: 10px;">
+        <div class="item-header">
+          <span class="item-title">Python-Based Cybersecurity Utility Tools</span>
+        </div>
+        <div class="item-tech-line"><strong>Technologies:</strong> Python 3, Sockets, Cryptography, CLI Automation</div>
+        <ul class="bullet-list">
+          <li>Developed custom TCP port scanner scripts and cryptographic hash generation utilities for file integrity checks.</li>
+        </ul>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="item-block" style="margin-top: 10px;">
+        <div class="item-header">
+          <span class="item-title">Network Scanning and Traffic Analysis Lab</span>
+        </div>
+        <div class="item-tech-line"><strong>Technologies:</strong> Wireshark, Nmap, Kali Linux, Packet Inspection</div>
+        <ul class="bullet-list">
+          <li>Conducted port and service discovery in isolated test network environments and analyzed PCAP captures.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Certifications and Training -->
+    <section class="resume-section" style="margin-bottom: 0;">
+      <h2 class="section-title"><i class="fas fa-certificate"></i> Certifications and Training</h2>
+      <ul class="bullet-list">
+        <li><strong>Diploma in Cybersecurity and Ethical Hacking</strong> — Red Team Hackers Academy (In progress)</li>
+        <li><strong>Python Internship Certificate</strong> — Zoople Technologies (Completed June 2024)</li>
+        <li><strong>Python Programming Certificate</strong> — Coursera (Completed)</li>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+</html>
